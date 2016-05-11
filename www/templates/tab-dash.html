@@ -1,0 +1,44 @@
+<ion-view view-title="Dashboard">
+  <ion-content class="padding">
+    <h2>Welcome to Ionic</h2>
+
+    <div ng-controller="userController">
+      <table border="1">
+        <tr>
+          <td>id</td>
+          <td>username</td>
+          <td>password</td>
+        </tr>
+        <tr ng-repeat="user in users">
+          <td>{{user.id}}</td>
+          <td>{{user.username}}</td>
+          <td>{{user.password}}</td>
+        </tr>
+      </table>
+    </div>
+
+
+
+    <form ng-submit="login(user)" name="myForm">
+
+    <label class="item item-input">
+      <span class="input-label">Username</span>
+      <input type="text" ng-model="user.username" name="username">
+    </label>
+
+
+    <label class="item item-input">
+      <span class="input-label">Password</span>
+      <input type="password" ng-model="user.password" name="password">
+    </label>
+
+    <button class="button button-positive icon-right ion-chevron-right button-full" type="submit">
+      login
+    </button>
+
+    </form>
+
+  </ion-content>
+</ion-view>
+
+<!-- <span ng-show="myForm.password.$error.required">必填</span>-->
